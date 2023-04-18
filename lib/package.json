@@ -10,46 +10,30 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./container": {
-      "types": "./types/components/container/container.d.ts",
-      "import": "./dist/container.js"
-    },
-    "./dialog": {
-      "types": "./types/components/dialog/dialog.d.ts",
-      "import": "./dist/dialog.js"
-    },
-    "./form": {
-      "types": "./types/components/form/form.d.ts",
-      "import": "./dist/form.js"
-    },
-    "./grid": {
-      "types": "./types/components/grid/grid.d.ts",
-      "import": "./dist/grid.js"
-    },
-    "./mixins/is-link": {
-      "types": "./types/mixins/is-link/is-link.d.ts",
-      "import": "./dist/is-link.js"
+    "./components/container": {
+      "types": "./types/components/container.d.ts",
+      "import": "./dist/components/container.js"
     }
   },
   "scripts": {
     "dev": "yarn storybook",
     "dev:hs": "vite build --watch",
     "build": "rm -rf dist && rm -rf types/index.d.ts && tsc && vite build",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "lit": "^2.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@storybook/addon-actions": "^7.0.6",
     "@storybook/addon-essentials": "^7.0.6",
     "@storybook/addon-links": "^7.0.6",
-    "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/builder-vite": "^7.0.6",
+    "@storybook/blocks": "^7.0.6",
     "@storybook/web-components": "^7.0.6",
+    "@storybook/web-components-vite": "^7.0.6",
     "lit-html": "^2.5.0",
+    "storybook": "^7.0.6",
     "typescript": "^5.0.4",
     "vite": "^4.0.4"
   }
