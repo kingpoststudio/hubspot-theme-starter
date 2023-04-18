@@ -1,0 +1,3 @@
+# Standard gitignore
+node_modules
+*.log
