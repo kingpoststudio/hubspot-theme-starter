@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import '../components/container.js';
-
+import '../styles/styles.css';
 
 export default {
   title: 'Container',
