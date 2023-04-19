@@ -8,25 +8,6 @@ export default {
 };
 
 const CtaButton = () => html`
-  <style>
-    .hs-cta-wrapper {
-      display: inline-block;
-    }
-    .cta_button {
-      display: inline-block;
-      padding: 1rem 1.5rem;
-      background: black;
-      color: white;
-      border-radius: 0.5rem;
-      text-align: center;
-      text-decoration: none;
-      transition: background 0.2s ease-in-out;
-    }
-    .cta_button:hover {
-      background: #21277e;
-    }
-  </style>
-
   <span class="hs-cta-wrapper" id="hs-cta-wrapper-custom_button">
     <span class="hs-cta-node" id="hs-cta-hubspot-custom_button" style="visibility: visible;" data-hs-drop="true">
       <a id="cta_button_id" class="cta_button" href="https://kingpoststudio.com/" style="" cta_dest_link="https://tlhfckoctbcr.com/" title="Call-to-Action">

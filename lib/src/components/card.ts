@@ -18,7 +18,8 @@ export default class Card extends LitElement {
       box-shadow: var(--box-shadow);
     }
 
-    .wrapper > * {
+    .wrapper > slot[name="title"] {
+      text-transform: uppercase;
     }
   `;
 
