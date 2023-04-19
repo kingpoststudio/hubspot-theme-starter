@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 @customElement('hubspot-card')
 export default class Card extends LitElement {
@@ -18,14 +18,21 @@ export default class Card extends LitElement {
       box-shadow: var(--box-shadow);
     }
 
+    .wrapper.dark {
+      background: #000;
+      color: #fff;
+    }
+
     .wrapper > slot[name="title"] {
       text-transform: uppercase;
     }
   `;
 
+  @property({ type: String }) theme: 'light' | 'dark' = 'light';
+
   render() {
     return html`
-      <div class="wrapper">
+      <div class="wrapper ${this.theme}">
         <slot name="title"></slot>
         <slot name="content"></slot>
         <slot name="cta"></slot>
