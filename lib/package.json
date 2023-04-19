@@ -18,7 +18,7 @@
   "scripts": {
     "dev": "yarn storybook",
     "dev:hs": "vite build --watch",
-    "build": "rm -rf dist && rm -rf types/index.d.ts && tsc && vite build",
+    "build": "rm -rf dist && vite build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

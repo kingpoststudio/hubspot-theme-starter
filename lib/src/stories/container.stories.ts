@@ -10,7 +10,7 @@ export default {
 export const Container = () => {
   return html`
     <hubspot-container>
-      Testing.
+      Test.
     </hubspot-container>
   `;
 };
