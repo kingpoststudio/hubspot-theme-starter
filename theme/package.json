@@ -1,0 +1,29 @@
+{
+  "name": "hs-starter-theme",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "rm -rf dist && webpack --watch --env portal=develop --env autoupload --env hsDest=LitDemoTheme",
+    "build": "rm -rf dist && webpack",
+    "upload": "hs upload --account=production dist LitDemoTheme",
+    "upload:develop": "hs upload --account=develop dist LitDemoTheme",
+    "deploy": "yarn build && yarn upload",
+    "deploy:develop": "yarn build && yarn upload:develop",
+    "hs:init": "hs init",
+    "hs:auth": "hs auth"
+  },
+  "devDependencies": {
+    "@hubspot/cli": "^4.0.1",
+    "@hubspot/webpack-cms-plugins": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "esbuild-loader": "^2.20.0",
+    "ignore-loader": "^0.1.2",
+    "mini-css-extract-plugin": "^2.6.0",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^9.2.9",
+    "typescript": "^4.6.3",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

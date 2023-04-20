@@ -1,0 +1,30 @@
+<!--
+  templateType: none
+-->
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8">
+    {% if page_meta.html_title %}<title>{{ page_meta.html_title }}</title>{% endif %}
+    {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+
+    {{ require_js(get_asset_url('../../build/main.js'), { async: false, position: 'head' }) }}
+    {{ require_css(get_asset_url("../../build/main.css")) }}
+
+    {% if template_css %}
+      {{ require_css(get_asset_url(template_css)) }}
+    {% endif %}
+
+    {{ standard_header_includes }}
+  </head>
+
+  <body>
+    <div class="{{ builtin_body_classes }}">
+      {% block body %}
+      {% endblock body %}
+    </div>
+    {{ standard_footer_includes }}
+  </body>
+
+</html>

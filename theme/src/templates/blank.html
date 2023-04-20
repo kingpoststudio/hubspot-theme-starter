@@ -1,0 +1,15 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Blank
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+<main>
+  {% dnd_area 'main_dnd' %}
+  {% end_dnd_area %}
+</main>
+
+{% endblock body %}

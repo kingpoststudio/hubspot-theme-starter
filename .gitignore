@@ -1,2 +1,4 @@
 node_modules
 *.log
+hubspot.config.yml
+dist
