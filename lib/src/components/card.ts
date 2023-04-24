@@ -1,5 +1,4 @@
-import { LitElement, html, css } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+const { LitElement, html, css, property, customElement } = window.Lit;
 import { IsLink } from '../mixins/is-link';
 
 @customElement('hubspot-card')
