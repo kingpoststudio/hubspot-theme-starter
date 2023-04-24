@@ -5,7 +5,9 @@ const { ESBuildMinifyPlugin } = require('esbuild-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HubSpotAutoUploadPlugin = require('@hubspot/webpack-cms-plugins/HubSpotAutoUploadPlugin');
 
-const moduleEntries = {};
+const moduleEntries = {
+  'modules/Cards.module/module': './src/modules/Cards.module/module.ts',
+};
 
 const mainConfig = ({ portal, autoupload, hsDest }) => ({
   mode: 'production',
