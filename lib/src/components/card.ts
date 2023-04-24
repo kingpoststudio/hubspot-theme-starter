@@ -1,8 +1,9 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { IsLink } from '../mixins/is-link';
 
 @customElement('hubspot-card')
-export default class Card extends LitElement {
+export default class Card extends IsLink(LitElement) {
   static styles = css`
     .wrapper {
       display: flex;
@@ -13,14 +14,14 @@ export default class Card extends LitElement {
       max-width: 20rem;
       margin: 0 auto;
       padding: 2rem;
-      background: #fff;
+      background: var(--color-white);
       border-radius: 1rem;
       box-shadow: var(--box-shadow);
     }
 
     .wrapper.dark {
-      background: #000;
-      color: #fff;
+      background: var(--color-black);
+      color: var(--color-white);
     }
 
     .wrapper > slot[name="title"] {

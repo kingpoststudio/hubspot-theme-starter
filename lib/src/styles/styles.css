@@ -1,5 +1,10 @@
 :root {
   --font-family: "Tahoma", sans-serif;
+
+  --color-white: #fcfcfc;
+  --color-black: #0e0e0e;
+  --color-green: #1e5d30;
+
   --box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
 }
 
@@ -17,12 +22,12 @@
   display: inline-block;
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
-  background: rgb(25, 75, 70);
+  background: var(--color-green);
   color: white;
   text-align: center;
   text-decoration: none;
   transition: background 0.2s ease-in-out;
 }
 .cta_button:hover {
-  background: rgb(15, 65, 60);
+  background: var(--color-black);
 }
