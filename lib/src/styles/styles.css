@@ -9,15 +9,23 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: var(--font-family);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
 .hs-cta-wrapper {
   display: inline-block;
 }
+
 .cta_button {
   display: inline-block;
   padding: 1rem 1.5rem;
@@ -28,6 +36,7 @@
   text-decoration: none;
   transition: background 0.2s ease-in-out;
 }
+
 .cta_button:hover {
   background: var(--color-black);
 }

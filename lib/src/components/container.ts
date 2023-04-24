@@ -9,7 +9,6 @@ export default class Container extends LitElement {
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem;
-      background: #f5f5f5;
     }
   `;
 
