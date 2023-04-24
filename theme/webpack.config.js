@@ -28,16 +28,11 @@ const mainConfig = ({ portal, autoupload, hsDest }) => ({
   module: {
     rules: [
       {
-        test: /\.ts?$/,
+        test: /\.js?$/,
         loader: 'esbuild-loader',
         options: {
-          loader: 'ts',
           target: 'es2020',
         },
-      },
-      {
-        test: /\.d\.ts$/,
-        loader: 'ignore-loader',
       },
       {
         test: /\.css$/,
@@ -50,7 +45,7 @@ const mainConfig = ({ portal, autoupload, hsDest }) => ({
   },
 
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.js'],
   },
 
   plugins: [
