@@ -1,9 +1,11 @@
 <hubspot-container>
-  {% for card in module.cards %}
-  <hubspot-card theme="{{ card.theme }}">
-    <h2 slot="title">{{ card.title }}</h2>
-    <div slot="content">{{ card.content }}</div>
-    <div slot="cta">{% cta guid="{{ card.cta }}" %}</div>
-  </hubspot-card>
-  {% endfor %}
+  <hubspot-grid>
+    {% for card in module.cards %}
+    <hubspot-card theme="{{ card.theme }}">
+      <h2 slot="title">{{ card.title }}</h2>
+      <div slot="content">{{ card.content }}</div>
+      <div slot="cta">{% cta guid="{{ card.cta }}" %}</div>
+    </hubspot-card>
+    {% endfor %}
+  </hubspot-grid>
 </hubspot-container>

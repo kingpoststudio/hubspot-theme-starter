@@ -5,16 +5,12 @@ const { ESBuildMinifyPlugin } = require('esbuild-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HubSpotAutoUploadPlugin = require('@hubspot/webpack-cms-plugins/HubSpotAutoUploadPlugin');
 
-const moduleEntries = {
-  'modules/Cards.module/module': './src/modules/Cards.module/module.ts',
-};
-
 const mainConfig = ({ portal, autoupload, hsDest }) => ({
   mode: 'production',
 
   entry: {
     'build/main': './src/js/main.ts',
-    ...moduleEntries,
+    'modules/HeroBanner.module/module': './src/modules/HeroBanner.module/module.ts',
   },
 
   output: {
@@ -28,7 +24,7 @@ const mainConfig = ({ portal, autoupload, hsDest }) => ({
   module: {
     rules: [
       {
-        test: /\.js?$/,
+        test: /\.ts?$/,
         loader: 'esbuild-loader',
         options: {
           target: 'es2020',
@@ -45,7 +41,7 @@ const mainConfig = ({ portal, autoupload, hsDest }) => ({
   },
 
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.ts'],
   },
 
   plugins: [
