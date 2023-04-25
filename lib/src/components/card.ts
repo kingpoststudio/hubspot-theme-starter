@@ -1,8 +1,8 @@
-const { LitElement, html, css, property, customElement } = window.Lit;
-import { IsLink } from '../mixins/is-link';
+import { property, customElement } from 'lit/decorators.js';
+const { LitElement, html, css } = window.Lit;
 
 @customElement('hubspot-card')
-export default class Card extends IsLink(LitElement) {
+export default class Card extends LitElement {
   static styles = css`
     .wrapper {
       display: flex;

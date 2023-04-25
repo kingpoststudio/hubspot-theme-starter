@@ -1,5 +1,5 @@
-const { LitElement, html, css, customElement } = window.Lit;
-
+import { customElement } from 'lit/decorators.js';
+const { LitElement, html, css } = window.Lit;
 
 @customElement('hubspot-container')
 export default class Container extends LitElement {

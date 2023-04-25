@@ -1,4 +1,5 @@
-const { LitElement, html, css, customElement } = window.Lit;
+import { customElement } from 'lit/decorators.js';
+const { LitElement, html, css } = window.Lit;
 
 @customElement('hubspot-hero-banner')
 export default class HeroBanner extends LitElement {

@@ -1,4 +1,5 @@
-const { LitElement, html, css, property, customElement } = window.Lit;
+import { customElement } from 'lit/decorators.js';
+const { LitElement, html, css } = window.Lit;
 
 @customElement('hubspot-grid')
 export default class Grid extends LitElement {
