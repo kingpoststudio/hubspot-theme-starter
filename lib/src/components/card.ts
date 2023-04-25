@@ -1,5 +1,4 @@
-import { property, customElement } from 'lit/decorators.js';
-const { LitElement, html, css } = window.Lit;
+const { LitElement, html, css, property, customElement } = window.Lit;
 
 @customElement('hubspot-card')
 export default class Card extends LitElement {
