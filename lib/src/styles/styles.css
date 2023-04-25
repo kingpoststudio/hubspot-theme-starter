@@ -5,6 +5,7 @@
   --color-black: #0e0e0e;
   --color-green: #1e5d30;
 
+  --page-max-width: 1200px;
   --box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
 }
 
@@ -18,7 +19,7 @@ body, html {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
