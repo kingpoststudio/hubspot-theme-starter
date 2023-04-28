@@ -1,5 +1,5 @@
 {
-  "name": "hubspot-starter-lib",
+  "name": "tosoh-micro2023",
   "version": "0.0.1",
   "main": "dist/index.js",
   "type": "module",
@@ -18,13 +18,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@storybook/addon-essentials": "^7.0.6",
-    "@storybook/addon-links": "^7.0.6",
-    "@storybook/blocks": "^7.0.6",
-    "@storybook/web-components": "^7.0.6",
-    "@storybook/web-components-vite": "^7.0.6",
+    "@storybook/addon-essentials": "^7.0.7",
+    "@storybook/addon-links": "^7.0.7",
+    "@storybook/blocks": "^7.0.7",
+    "@storybook/web-components": "^7.0.7",
+    "@storybook/web-components-vite": "^7.0.7",
     "lit-html": "^2.5.0",
-    "storybook": "^7.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.7",
     "typescript": "^5.0.4",
     "vite": "^4.0.4"
   }
