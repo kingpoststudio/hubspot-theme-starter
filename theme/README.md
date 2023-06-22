@@ -29,7 +29,6 @@ yarn dev
 # or
 npm run dev
 ```
-```
 
 ### Build
 
