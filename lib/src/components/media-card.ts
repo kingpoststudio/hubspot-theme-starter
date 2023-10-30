@@ -4,7 +4,10 @@ const { LitElement, html, css } = window.Lit;
 
 class MediaCard extends LitElement {
     static styles = css`
-        
+        * {
+            box-sizing: border-box;
+        }
+
         .wrapper {
             display: flex;
             justify-content: center;
@@ -18,13 +21,20 @@ class MediaCard extends LitElement {
             margin: var(--space);
             border: 0.25rem solid black;
             border-radius: 1rem;
+            overflow: hidden;
         }
 
         .container-image {
-            height: 12rem;
-            margin-bottom: var(--space);
-            background-size: cover;
+            display: flex;
+            width: 100%;
+            aspect-ratio: 16 / 9;
             border-radius: 0.75rem 0.75rem 0 0;
+        }
+    
+        slot[name="image"]::slotted(img) {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .container-content {
@@ -32,8 +42,8 @@ class MediaCard extends LitElement {
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            gap: 1rem;
-            padding: 0.5rem;
+            gap: var(--space);
+            padding: var(--space);
         }
 
         ::slotted([slot="title"]) {
@@ -55,22 +65,20 @@ class MediaCard extends LitElement {
             border-radius: 0.5rem;
             cursor: pointer;
         }
-
-        
     `;
 
     render() {
         return html`
-        
         <div class="wrapper">
-            <div class="container">
-            <div class="container-image" style="background-image">
-                <slot name="image"></slot> 
-            </div>
-            <div class="container-content">
-                <slot name="title"></slot>
-                <slot name="description"></slot>
-                <slot name="button"></slot>
+                <div class="container">
+                <div class="container-image">
+                    <slot name="image"></slot>
+                </div>
+                <div class="container-content">
+                    <slot name="title"></slot>
+                    <slot name="description"></slot>
+                    <slot name="button"></slot>
+                </div>
             </div>
         </div>
         `;

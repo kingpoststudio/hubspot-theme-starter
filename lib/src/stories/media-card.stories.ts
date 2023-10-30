@@ -10,7 +10,7 @@ export default {
 export const Default = () => {
   return html`
     <hubspot-media-card>
-      <img src="https://picsum.photos/300/200" slot="image" />
+      <img src="https://picsum.photos/800" slot="image" />
       <h3 slot="title">Hello World of Images</h3>
       <p slot="description">Welcome to a world of captivating visuals where images tell 
       stories. Explore a diverse collection of images that traverse landscapes, cultures, and 
