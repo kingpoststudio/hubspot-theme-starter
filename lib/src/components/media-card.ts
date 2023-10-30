@@ -9,21 +9,20 @@ class MediaCard extends LitElement {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 6.25rem;
         }
 
         .container {
             background: white;
-            width: 19.18rem;
-            height: 24rem;
-            margin: 1rem;
+            width: 20rem;
+            min-height: 24rem;
+            margin: var(--space);
             border: 0.25rem solid black;
             border-radius: 1rem;
         }
 
         .container-image {
             height: 12rem;
-            margin-bottom: 1rem;
+            margin-bottom: var(--space);
             background-size: cover;
             border-radius: 0.75rem 0.75rem 0 0;
         }
@@ -33,7 +32,8 @@ class MediaCard extends LitElement {
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding: 0rem 0.5rem;
+            gap: 1rem;
+            padding: 0.5rem;
         }
 
         ::slotted([slot="title"]) {
@@ -41,8 +41,8 @@ class MediaCard extends LitElement {
         }
 
         ::slotted([slot="description"]) {
-            font-size: 14px;
-            line-height: 1;
+            font-size: 0.825rem;
+            line-height: 1.25;
             color: black;
             text-align: center;
         }
@@ -54,7 +54,6 @@ class MediaCard extends LitElement {
             border: none;
             border-radius: 0.5rem;
             cursor: pointer;
-            margin-top: 0.5rem;
         }
 
         
@@ -65,7 +64,8 @@ class MediaCard extends LitElement {
         
         <div class="wrapper">
             <div class="container">
-                <div class="container-image" style="background-image: url('https://picsum.photos/300/200');"> 
+            <div class="container-image" style="background-image">
+                <slot name="image"></slot> 
             </div>
             <div class="container-content">
                 <slot name="title"></slot>
