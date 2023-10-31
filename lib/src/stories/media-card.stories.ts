@@ -7,7 +7,7 @@ export default {
   component: 'hubspot-media-card',
   argTypes: {
     theme: {
-      options: ['light', 'dark'],
+      options: ['light', 'dark', 'purple'],
       control: {
         type: 'select',
       },

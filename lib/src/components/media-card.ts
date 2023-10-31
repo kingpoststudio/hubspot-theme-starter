@@ -9,18 +9,24 @@ class MediaCard extends LitElement {
         }
 
         .wrapper {
-            background: white;
+            background: var(--color-white);
             width: 20rem;
             min-height: 24rem;
             margin: var(--space);
-            border: 0.25rem solid black;
+            border: 0.25rem solid var(--color-black);
             border-radius: 1rem;
             overflow: hidden;
         }
 
         .wrapper.dark {
-            background: black;
-            color: white;
+            background: var(--color-black);
+            color: var(--color-white);
+        }
+
+        .wrapper.purple {
+            background: var(--color-purple);
+            color: var(--color-lime);
+            border: 0.25rem solid var(--color-lime);
         }
 
         .image {
@@ -52,13 +58,13 @@ class MediaCard extends LitElement {
         slot[name="description"]::slotted(description) {
             font-size: 0.825rem;
             line-height: 1.25;
-            color: black;
+            color: var(--color-black);
             text-align: center;
         }
 
         slot[name="button"]::slotted(button) {
-            background-color: black;
-            color: white;
+            background-color: var(--color-black);
+            color: var(--color-white);
             padding: 0.625rem 1.25rem;
             border: none;
             border-radius: 0.5rem;
@@ -66,8 +72,13 @@ class MediaCard extends LitElement {
         }
 
         .wrapper.dark slot[name="button"]::slotted(button) {
-            background-color: white;
-            color: black;
+            background-color: var(--color-white);
+            color: var(--color-black);
+        }
+
+        .wrapper.purple slot[name="button"]::slotted(button) {
+            background-color: var(--color-lime);
+            color: var(--color-purple);
         }
     `;
     
