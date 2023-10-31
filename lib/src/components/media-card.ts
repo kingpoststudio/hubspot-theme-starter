@@ -16,6 +16,7 @@ class MediaCard extends LitElement {
             border: 0.25rem solid var(--color-black);
             border-radius: 1rem;
             overflow: hidden;
+            transition: background 1s, color 1s, border-color 1s;
         }
 
         .wrapper.dark {
