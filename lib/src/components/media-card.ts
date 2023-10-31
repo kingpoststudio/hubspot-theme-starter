@@ -8,6 +8,12 @@ class MediaCard extends LitElement {
             box-sizing: border-box;
         }
 
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 1fr);
+            gap: var(--space);
+        }
+
         .wrapper {
             background: var(--color-white);
             width: 20rem;
@@ -82,21 +88,25 @@ class MediaCard extends LitElement {
             color: var(--color-purple);
         }
     `;
-    
+
     @property({ type: String }) theme = 'light';
 
     render() {
         return html`
-        <div class="wrapper ${this.theme}">
-            <div class="image">
-                <slot name="image"></slot>
+            <div class="grid-container">
+                <div class="wrapper ${this.theme}">
+                    <div class="image">
+                        <slot name="image"></slot>
+                    </div>
+                    <div class="content">
+                        <slot name="title"></slot>
+                        <slot name="description"></slot>
+                        <div class="button-container">
+                            <slot name="button"></slot>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="content">
-                <slot name="title"></slot>
-                <slot name="description"></slot>
-                <slot name="button"></slot>
-            </div>
-        </div>
         `;
     }
 }
