@@ -5,11 +5,20 @@ import '../styles/styles.css';
 export default {
   title: 'Media Card',
   component: 'hubspot-media-card',
+  argTypes: {
+    theme: {
+      options: ['light', 'dark'],
+      control: {
+        type: 'select',
+      },
+      defaultValue: 'dark',
+    },
+  },
 };
 
-export const Default = () => {
+export const Default = (args) => {
   return html`
-    <hubspot-media-card>
+    <hubspot-media-card theme="${args.theme}">
       <img src="https://picsum.photos/800" slot="image" />
       <h3 slot="title">Hello World of Images</h3>
       <p slot="description">Welcome to a world of captivating visuals where images tell 
@@ -21,3 +30,5 @@ export const Default = () => {
     </hubspot-media-card>
   `;
 };
+
+

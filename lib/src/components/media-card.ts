@@ -1,6 +1,6 @@
 import '../globals';
 
-const { LitElement, html, css } = window.Lit;
+const { LitElement, html, css, property, customElement } = window.Lit;
 
 class MediaCard extends LitElement {
     static styles = css`
@@ -16,6 +16,11 @@ class MediaCard extends LitElement {
             border: 0.25rem solid black;
             border-radius: 1rem;
             overflow: hidden;
+        }
+
+        .wrapper.dark {
+            background: black;
+            color: white;
         }
 
         .image {
@@ -59,11 +64,18 @@ class MediaCard extends LitElement {
             border-radius: 0.5rem;
             cursor: pointer;
         }
+
+        .wrapper.dark slot[name="button"]::slotted(button) {
+            background-color: white;
+            color: black;
+        }
     `;
+    
+    @property({ type: String }) theme = 'light';
 
     render() {
         return html`
-        <div class="wrapper">
+        <div class="wrapper ${this.theme}">
             <div class="image">
                 <slot name="image"></slot>
             </div>
