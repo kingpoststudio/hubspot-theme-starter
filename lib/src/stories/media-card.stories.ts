@@ -32,7 +32,6 @@ export const Default = (args) => {
         </button>
       </hubspot-media-card>
 
-      <div class="grid-container">
       <hubspot-media-card theme="${args.theme}">
         <img src="https://picsum.photos/800" slot="image" />
         <h3 slot="title">Hello World of Images</h3>
@@ -46,8 +45,7 @@ export const Default = (args) => {
         </button>
         </hubspot-media-card>
 
-      <div class="grid-container">
-      <hubspot-media-card theme="${args.theme}">
+        <hubspot-media-card theme="${args.theme}">
         <img src="https://picsum.photos/800" slot="image" />
         <h3 slot="title">Hello World of Images</h3>
         <p slot="description">Welcome to a world of captivating visuals where images tell 
@@ -60,8 +58,7 @@ export const Default = (args) => {
         </button>
         </hubspot-media-card>
 
-      <div class="grid-container">
-      <hubspot-media-card theme="${args.theme}">
+        <hubspot-media-card theme="${args.theme}">
         <img src="https://picsum.photos/800" slot="image" />
         <h3 slot="title">Hello World of Images</h3>
         <p slot="description">Welcome to a world of captivating visuals where images tell 

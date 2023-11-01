@@ -8,17 +8,11 @@ class MediaCard extends LitElement {
             box-sizing: border-box;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, 1fr);
-            gap: var(--space);
-        }
-
         .wrapper {
             background: var(--color-white);
-            width: 20rem;
+            max-width: 20rem;
             min-height: 24rem;
-            margin: var(--space);
+            margin: 0;
             border: 0.25rem solid var(--color-black);
             border-radius: 1rem;
             overflow: hidden;
@@ -93,7 +87,6 @@ class MediaCard extends LitElement {
 
     render() {
         return html`
-            <div class="grid-container">
                 <div class="wrapper ${this.theme}">
                     <div class="image">
                         <slot name="image"></slot>
@@ -106,7 +99,6 @@ class MediaCard extends LitElement {
                         </div>
                     </div>
                 </div>
-            </div>
         `;
     }
 }

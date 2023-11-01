@@ -24,6 +24,12 @@ body, html {
   padding: 0;
 }
 
+@media (min-width: 768px) {
+  body, html {
+    font-size: min(16px, 1.4vw);
+  }
+}
+
 button a { 
   font-size: inherit;
   color: inherit;
@@ -51,4 +57,23 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .cta_button:hover {
   background: var(--color-black);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: var(--space);
+  justify-items: center;
+}
+
+@media screen and (min-width: 560px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid-container{
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
