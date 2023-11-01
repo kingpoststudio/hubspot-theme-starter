@@ -4,6 +4,8 @@
   --color-white: #fcfcfc;
   --color-black: #0e0e0e;
   --color-green: #1e5d30;
+  --color-purple: #4d0eeb;
+  --color-lime: #a0ff70;
 
   --page-max-width: 1200px;
   --box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
@@ -22,8 +24,16 @@ body, html {
   padding: 0;
 }
 
-button { 
+@media (min-width: 768px) {
+  body, html {
+    font-size: min(16px, 1.4vw);
+  }
+}
+
+button a { 
   font-size: inherit;
+  color: inherit;
+  text-decoration: none;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -47,4 +57,23 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .cta_button:hover {
   background: var(--color-black);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: var(--space);
+  justify-items: center;
+}
+
+@media screen and (min-width: 560px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid-container{
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

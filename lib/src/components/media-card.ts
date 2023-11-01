@@ -1,6 +1,6 @@
 import '../globals';
 
-const { LitElement, html, css } = window.Lit;
+const { LitElement, html, css, property, customElement } = window.Lit;
 
 class MediaCard extends LitElement {
     static styles = css`
@@ -9,13 +9,25 @@ class MediaCard extends LitElement {
         }
 
         .wrapper {
-            background: white;
-            width: 20rem;
+            background: var(--color-white);
+            max-width: 20rem;
             min-height: 24rem;
-            margin: var(--space);
-            border: 0.25rem solid black;
+            margin: 0;
+            border: 0.25rem solid var(--color-black);
             border-radius: 1rem;
             overflow: hidden;
+            transition: background 1s, color 1s, border-color 1s;
+        }
+
+        .wrapper.dark {
+            background: var(--color-black);
+            color: var(--color-white);
+        }
+
+        .wrapper.purple {
+            background: var(--color-purple);
+            color: var(--color-lime);
+            border: 0.25rem solid var(--color-lime);
         }
 
         .image {
@@ -47,32 +59,46 @@ class MediaCard extends LitElement {
         slot[name="description"]::slotted(description) {
             font-size: 0.825rem;
             line-height: 1.25;
-            color: black;
+            color: var(--color-black);
             text-align: center;
         }
 
         slot[name="button"]::slotted(button) {
-            background-color: black;
-            color: white;
+            background-color: var(--color-black);
+            color: var(--color-white);
             padding: 0.625rem 1.25rem;
             border: none;
             border-radius: 0.5rem;
             cursor: pointer;
         }
+
+        .wrapper.dark slot[name="button"]::slotted(button) {
+            background-color: var(--color-white);
+            color: var(--color-black);
+        }
+
+        .wrapper.purple slot[name="button"]::slotted(button) {
+            background-color: var(--color-lime);
+            color: var(--color-purple);
+        }
     `;
+
+    @property({ type: String }) theme = 'light';
 
     render() {
         return html`
-        <div class="wrapper">
-            <div class="image">
-                <slot name="image"></slot>
-            </div>
-            <div class="content">
-                <slot name="title"></slot>
-                <slot name="description"></slot>
-                <slot name="button"></slot>
-            </div>
-        </div>
+                <div class="wrapper ${this.theme}">
+                    <div class="image">
+                        <slot name="image"></slot>
+                    </div>
+                    <div class="content">
+                        <slot name="title"></slot>
+                        <slot name="description"></slot>
+                        <div class="button-container">
+                            <slot name="button"></slot>
+                        </div>
+                    </div>
+                </div>
         `;
     }
 }
