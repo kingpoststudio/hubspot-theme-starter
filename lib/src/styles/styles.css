@@ -20,8 +20,6 @@
 
 body, html {
   font-size: min(16px, 3vw);
-  margin: 0;
-  padding: 0;
 }
 
 @media (min-width: 768px) {
