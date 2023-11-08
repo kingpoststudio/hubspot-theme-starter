@@ -46,14 +46,11 @@ export const Default = (args) => {
 
   <!-- Modal -->
     <hubspot-modal>
-    <section id="modal">
-    <p class="text-sm">Build your modal below.</p>
-    <div class="modal-container">
-    <div class="content">
-    <h1 slot="title">Welcome!</h1>
-    </div>
-    </div>
-    </section>
+    <h1 slot="title">Subscribe to Our Newsletter</h1>
+    <p slot="description"> Stay up to date with our latest news 
+        and updates by subscribing to our newsletter. Please 
+        fill out the form below to get started.
+    </p>
     </hubspot-modal>
   `;
 };

@@ -1,3 +1,4 @@
+import { isConstructorDeclaration } from 'typescript';
 import '../globals';
 
 const { LitElement, html, css, property, customElement } = window.Lit;
@@ -29,7 +30,6 @@ class Modal extends LitElement {
         }
 
         #modal {
-            flex: 1;
             display: flex;
             justify-content: center;
             place-items: center;
@@ -50,34 +50,106 @@ class Modal extends LitElement {
         }
 
         .modal-container {
-            background-color: red;
+            background-color: var(--color-white);
             width: 30rem;
             border-radius: 3rem;
+            border: .25rem solid black;
             text-align: center;
-            line-height: 1.75rem;
+            line-height: 2rem;
             padding: 1.5rem 1.5rem;
-            justify-content: center;
+            justify-items: center;
           }
 
-        .content {
-            background-color:
-            padding: 1rem; 
+        .button-container {
+            text-align: center;
         }
 
-        slot[name="title"]::slotted(title) {
-            color: black;
+        .button-container button {
+            display: inline-block;
+            margin-right: .5rem;
         }
     `;
 
+    @property({type: Boolean}) isModalOpen = false;
+    @property({ type: Boolean }) formInteracted = false;
+
+    constructor() {
+        super();
+        document.addEventListener('keydown', this.handleKeyDown.bind(this));
+      }
+
+    disconnectedCallback() {
+        document.removeEventListener('keydown', this.handleKeyDown);
+        super.disconnectedCallback();
+    }
+    
+      openModal() {
+        this.isModalOpen = true;
+      }
+
+      closeModal() {
+       if (!this.formInteracted) {
+            this.isModalOpen = false;
+        }
+      }
+
+      handleKeyDown(event) {
+        if (event.key === 'Escape' && !this.formInteracted) {
+            this.closeModal();
+        }
+      }
+
+      submitForm(event) {
+        event.preventDefault();
+        const form = event.target;
+    
+        const formData = new FormData(form);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const subscription = formData.get('subscription');
+        const agreement = formData.get('agreement');
+        const gender = formData.get('gender');
+
+        if (!this.formInteracted) {
+            this.closeModal();
+        }
+      }
 
     render() {
         return html`
-                <div id="modal">
+                <button @click="${this.openModal}"> Open </button>
+                <div id="modal" style="display: ${this.isModalOpen ? 'flex' : 'none'}"> 
                     <div class="modal-container">
                         <div class="content">
                             <slot name="title"></slot>
                             <slot name="description"></slot>
-                            <slot name="button"></slot>
+                            <form @submit="${this.submitForm}">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required><br>
+                
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required><br>
+                
+                                <label for="subscription">Subscription Type:</label>
+                                <select id="subscription" name="subscription" required>
+                                    <option value="daily">Daily</option>
+                                    <option value="weekly">Weekly</option>
+                                    <option value="monthly">Monthly</option>
+                                </select><br>
+                
+                                <label for="agreement">I agree to the terms and conditions:</label>
+                                <input type="checkbox" id="agreement" name="agreement" required><br>
+                
+                                <label>Gender</label>
+                                <input type="radio" id="male" name="gender" value="male" required>
+                                <label for="male">Male</label>
+                                <input type="radio" id="female" name="gender" value="female" required>
+                                <label for="female">Female</label><br>
+                                <div class="button-container">
+                                    <button type="submit" slot="submit-btn">Submit</button>
+                                    <button @click="${this.closeModal}">Cancel</button>
+                                </div>
+                                </form>
                         </div>
                     </div>
                 </div>
@@ -86,3 +158,8 @@ class Modal extends LitElement {
 }
 
 customElements.define('hubspot-modal', Modal);
+
+
+
+
+
