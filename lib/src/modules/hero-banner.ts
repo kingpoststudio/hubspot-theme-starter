@@ -1,7 +1,6 @@
-const { LitElement, html, css, customElement } = window.Lit;
+const { LitElement, html, css } = window.Lit;
 
-@customElement('hubspot-hero-banner')
-export default class HeroBanner extends LitElement {
+export class HeroBanner extends LitElement {
   static styles = css`
     .wrapper {
       display: flex;
@@ -27,3 +26,5 @@ export default class HeroBanner extends LitElement {
     `;
   }
 }
+
+customElements.define('hero-banner', HeroBanner);
